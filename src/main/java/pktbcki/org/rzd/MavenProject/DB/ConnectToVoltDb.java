@@ -8,11 +8,12 @@ import org.voltdb.client.ClientFactory;
 import org.voltdb.client.NoConnectionsException;
 import org.voltdb.client.ProcCallException;
 
-public class Connector {
+public class ConnectToVoltDb {
 	
-
-	public Client ConnectToDB (Client client, ClientConfig config, 
-			String login, String password, String IpAddress, int Port)	
+	protected Client client;
+	protected ClientConfig config; 
+	
+	public Client ConnectToDB (String login, String password, String IpAddress, int Port)	
 			throws NoConnectionsException, IOException{
 		try{
 			config = new ClientConfig(login,password);
@@ -23,6 +24,5 @@ public class Connector {
 			e.printStackTrace();
 			return null;
 		}
-	}		
-	
+	}			
 }

@@ -6,10 +6,10 @@ import org.voltdb.client.Client;
 import org.voltdb.client.NoConnectionsException;
 import org.voltdb.client.ProcCallException;
 
-public class CRUDImpl {
+public class CRUD extends ConnectToVoltDb {
 
 	
-	public void insert(Client client, String query) throws ProcCallException, NoConnectionsException, IOException {
+	public void insert(String query) throws ProcCallException, NoConnectionsException, IOException {
 				
 		try{
 			client.callProcedure("@AdHoc", query);
